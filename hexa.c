@@ -1,44 +1,47 @@
-
 #include<stdio.h>
 int main(){
-int n,i,j,a[20][20];
-printf("Enter the value for n");
-scanf("%d",&n);
-printf("Enter the elements: ");
-for(i=0;i<n;i++){
-    for(j=0;j<4;j++){
-        scanf("%d",&a[i][j]);
+    int n,a[30][30],i,j,k;
+    printf("Enter the value of n: ");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        for(j=0;j<4;j++){
+            printf("Enter the number: ");
+            scanf("%d",&a[i][j]);
+        }
     }
-}
-for(i=0;i<n;i++){
-    int k=1;
-    for(j=3;j>=0;j--){
-        int sum=0;
-        sum+=a[i][j]*k;
-        k=k*2;
-        if(sum>9){
+    int sum;
+    for(i=0;i<n;i++){
+        sum=0;
+        k=1;
+        for(j=0;j<4;j++){
+            
+           sum+=a[i][j]*k;
+           k=k*2;
+            
+        }
+           if(sum>9){
             if(sum==10){
-               printf("A");
+                printf("A\n");
             }
             else if(sum==11){
-                printf("B");
+                printf("B\n");
             }
             else if(sum==12){
-                printf("C");
+                printf("C\n");
             }
             else if(sum==13){
-               printf("D");
+                printf("D\n");
             }
             else if(sum==14){
-                printf("E");
+                printf("E\n");
             }
             else if(sum==15){
-                printf("F");
+                printf("F\n");
             }
-        }
-        else{
-            printf("%d",sum);
-        }
-    }
+           }
+           else{
+               printf("%d\n",sum);
+           }}
 }
-}
+    
+
